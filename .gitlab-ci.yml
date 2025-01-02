@@ -1,0 +1,32 @@
+image: docker:latest
+
+variables:
+  DOCKER_HOST: tcp://docker:2375/
+  DOCKER_DRIVER: overlay2
+  DOCKER_TLS_CERTDIR: ""
+
+services:
+  - name: docker:dind
+    alias: localhost
+
+before_script:
+  - docker info
+  - apk --update add nodejs npm
+  - npm install mocha axios
+
+testFront:
+  stage: test
+  script:
+    - docker compose up ihm-front -d
+    - sleep 10
+    - wget -qO- http://docker:3000
+    - cd ihm/front-next && npm run test
+
+testBack:
+  stage: test
+  script:
+    - echo -e "MONGODB_URL=$MONGODB_URL\r\nJWT_SECRET=$JWT_SECRET\r\nNODE_ENV=production\r\nPORT=8000\r\nSMTP_HOST=smtp.gmail.com\r\nSMTP_PORT=587\r\nSMTP_USERNAME=celsius.gpe@gmail.com\r\nEMAIL_FROM=celsius.gpe@gmail.com\r\nSMTP_PASSWORD=$SMTP_PASSWORD" >> "ihm/back-express/.env"
+    - docker compose up ihm-back -d
+    - sleep 10
+    - cd ihm/back-express && npm run test
+    
