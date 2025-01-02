@@ -5,13 +5,13 @@
 ## Getting started
 
 Yo bg !
-Voici le gitlab privé pour le développement de CELSIUS
+Voici le git pour le développement de CELSIUS
 
-Lien de la production de celsius : www.celsius.ovh
+~~Lien de la production de celsius : www.celsius.ovh~~
 
-Logins de connexion pour naviguer sur l'outil
-login : doudon_t@etna-alternance.net
-pwd : test12345
+~~Logins de connexion pour naviguer sur l'outil~~
+~~login : doudon_t@etna-alternance.net~~
+~~pwd : test12345~~
 
 ## Init le projet
 
@@ -54,17 +54,6 @@ Sinon soyez pas timides, vous m'appelez.
 
 `docker volume rm $(docker volume ls -q)` to **remove ALL volumes** (most often used to drop the database & restart from a fresh DB) or `drmv` if you have aliases (ask me about it)
 
-## Ressources intéressantes (j'espère)
-
-🦊 GitLab : https://gitlab.com/jovici_a/celsius
-
-📗 RoadMap : https://docs.google.com/spreadsheets/d/1_rCwqq7pEL2UId8GgORfLS0NrGeNZ939afM-H9JpHGY/edit?usp=sharing
-
-📂 Drive GPE : https://drive.google.com/drive/folders/1O9uLnfrEpbCug2HrgKtP3tpfyVlD6wRc?usp=sharing
-
-🖊 Figma : https://www.figma.com/file/D4iN1JMy18Trx4jSIGcug7/GPE?type=design&node-id=161-46&mode=design
-
-☎ Numéro de tel de Aleks : 06 26 37 57 19
 
 ## Membres
 
